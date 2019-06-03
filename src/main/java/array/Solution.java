@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @program: LeetCode Study
- * @description: 求众数
+ * @description: 求众数,难度：简单
  * @author: ZengGuangfu
  * @create 2019-04-04 16:26
  * 题目：给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。

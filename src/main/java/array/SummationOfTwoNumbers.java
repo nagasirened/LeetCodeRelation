@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * @program: LeetCode Study
- * @description: Summation of two numbers  两数求和为目标数
+ * @description: Summation of two numbers  两数求和为目标数,难度：简单
  * @author: ZengGuangfu
  * @create 2019-04-04 16:59
  *
