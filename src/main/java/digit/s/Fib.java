@@ -1,4 +1,4 @@
-package digit;
+package digit.s;
 
 /**
  * @program: LeetCode Study

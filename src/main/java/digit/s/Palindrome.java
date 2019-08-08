@@ -1,4 +1,4 @@
-package digit;
+package digit.s;
 
 
 /**
@@ -28,7 +28,7 @@ public class Palindrome {
     }
 
     /**
-     *  刚好做了一个题就是反序，于是就直接拿出来使了，不过这样做稍显麻烦，我为啥要转换回Integer呢
+     *  刚好做了一个题就是反序，于是就直接拿出来使了，不过这样做稍显麻烦，我为啥要转换回Integer呢，直接字符串判断不就得了
      */
     public static boolean isPalindrome(int x) {
         if (x < 0){

@@ -1,4 +1,4 @@
-package string;
+package string.s;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

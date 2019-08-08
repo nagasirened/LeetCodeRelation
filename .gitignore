@@ -1,5 +1,5 @@
-leetcode.iml
-
+/leetcode.iml
+/LeetCode Study.iml
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
@@ -13,7 +13,7 @@ leetcode.iml
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/**
 *.iws
 *.iml
 *.ipr
