@@ -1,0 +1,96 @@
+
+1、死锁   线程得到资源却不释放，造成死锁
+2、活锁   线程相互竞争，得不到可供使用的资源，动态情景造成活锁
+3、饥饿   指某一个或者多个因为种种原因无法获取需要的资源，导致一直无法执行。（例如线程优先级过低）
+
+并发级别：阻塞    非阻塞（无障碍 -> 无锁 -> 无等待）
+无障碍： 1、无障碍是一种最弱的无阻塞
+		2、线程自由出入临界区
+		3、无数据竞争时，有限步内完成操作
+		4、有数据竞争时，回滚数据重新读取
+无锁： 1、是无障碍的
+	  2、始终保证有一个线程能胜出（胜出之后剩下的还能保证有一个能胜出）
+无等待的： 1、无锁的
+		  2、要求所有线程都是必须在有限步内完成
+		  3、无饥饿的,因为第二点存在
+
+
+Amdahl定律（阿姆达尔定律）
+	- 定义了串行系统并行化后的加速比的计算公式和理论上限
+	- 加速比定义：加速比=优化前系统耗时/优化后系统耗时
+    Tn = T1(F + 1/n(1-F))
+	    Tn 处理器个数
+	    F 串行比例
+	    1-F 并行比例
+	加速比 S = T1/Tn = 1/(F + 1/n(1-F))
+	（增加CPU处理器的数量并不一定能起到有效的作用提高系统内可并行化的模块比重，
+	     合理增加并行处理器的数量，才能以最小的投入得到最大的加速比）
+
+Gustanfson定律（古斯塔夫森）
+	比日说串行时间a ,并行时间为b, n是处理器个数
+	加速比 = （a + n*b）/ (a+b)
+	串行比例F = a/(a+b)
+	则加速比 S = （a + n*b）/ (a+b)
+			  = n - F(n-1)
+	说明了有足够的并行比，那么加速比和CPU个数成正比
+
+A定律说并行比例不高，光加CPU用处不大
+G定律是说并行比例一定的情况下，加CPU会更好
+结论：越高的并行比例、提高CPU个数
+
+
+二、开启线程方法 start()是在新的线程中调用run()方法
+	@Override
+    public void run() {
+        if (target != null) {
+            target.run();
+        }
+    }
+这个方法中可以看出，我们执行start方法可以有两种方式
+第一种：我们可以重写当前线程run方法，我们就可以不理会这个target了
+第二种：target实际上是一个Runable实例。初始的时候target是null的，我们可以通过new Thread(new XXRunable())给target赋值，这样还是一样可以使用target.run()进行调用。
+
+终止线程
+- Thread.stop() 不推荐使用,它会释放所有的monitor(锁),可能导致多线程的数据不一致
+- void Thread.interrupt()   //中断线程
+- boolean Thread.isInterrupted()  //判断是否中断
+- static boolean Thread.isInterrupted()  //判断是否被中断，并清除当前中断状态
+
+
+线程基本操作--中断异常
+可能是sleep过程中数据也会中断，我们需要这时候退出
+public void run(){
+	while(true){
+		if (Thread.currentThread().isInterrupted()){
+			System.out.println("interrupted!");
+			break;
+		}
+		try{
+			Thread.sleep(2000);
+		}catch(InterruptedException e){
+			System.out.println("interrupted when sleep");
+			//设置中断状态，抛出异常后会清除中断标记位,不用下面这句话会直接回去上面，但是这时找不到中断标记位
+			Thread.currentThread().interrupt();
+		}
+		Thread.yield();
+	}
+}
+
+
+挂起（suspend）和继续执行（resume）线程
+- suspend不会释放锁，不推荐(如果获取资源后挂起，临界区不会释放资源，直到resume)
+- 如果加锁发生在resume之前，则死锁发生
+  线程一会执行suspend，线程二负责将他唤醒。但是如果先执行了线程二再执行线程一，就死锁了
+
+
+yield()方法，释放当前CPU，进入等待池一起竞争
+join()方法，有等待的意思。 主线程会等待join的几个线程完成后再一起完成。如果有三个线程，最后都有一个join()方法，但是有一个死锁了，主线程就会一直等待它不会退出。
+	join()的本质
+	while(isAlive()){
+		wait(0);
+	}
+void join(time) 可以传递一个毫秒时间，指有限期的等待
+
+
+
+
