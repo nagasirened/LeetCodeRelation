@@ -8,11 +8,9 @@ package other;
  */
 public class SingletonObject {
 
-    private SingletonObject(){
+    private SingletonObject(){}
 
-    };
-
-    private static SingletonObject singletonObject = null;
+    private static volatile SingletonObject singletonObject = null;
 
     public static SingletonObject getInstence(){
         if (singletonObject == null){

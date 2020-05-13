@@ -30,16 +30,13 @@ public class CommonChars {
     public static void main(String[] args) {
         String[] A = {"bella","label","roller"};
         List<String> stringList = commonChars(A);
-        stringList.forEach( str -> {
-            System.out.print(str + "   ");
-        });
     }
 
     /**
      * 取第一个字符串，取出所有的字符，将字符在其它字符串中匹配，如果包含就剃出来加入List集合
      */
     public static List<String> commonChars(String[] A) {
-        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list = new ArrayList<String>();
         if (A == null) return list;
         // 最外层，遍历第一个字符串
         for(int i = 0 ; i < A[0].length() ; i++){

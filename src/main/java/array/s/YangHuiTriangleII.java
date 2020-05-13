@@ -27,9 +27,9 @@ public class YangHuiTriangleII {
         }  );
     }
 
-    /**
-     * 执行用时 : 2 ms, 在Pascal's Triangle II的Java提交中击败了72.87% 的用户
-       内存消耗 : 33.1 MB, 在Pascal's Triangle II的Java提交中击败了53.46% 的用户
+    /**II的Java提交中击败了72.87% 的用户
+     内存消耗 : 33.1 MB, 在Pascal's Triang
+     * 执行用时 : 2 ms, 在Pascal's Triangle le II的Java提交中击败了53.46% 的用户
 
        利用二维数组辅助，可以快速获取上一行的值。
        就是利用上面那个改了一下

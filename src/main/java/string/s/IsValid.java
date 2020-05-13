@@ -61,7 +61,7 @@ public class IsValid {
 
     // 栈指针原理
     public boolean isValid2(String s) {
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<String>();
         for (int i = 0;i<s.length();i++) {
             switch (s.charAt(i)) {
                 case '(':
