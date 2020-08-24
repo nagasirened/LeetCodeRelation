@@ -48,7 +48,7 @@ public class FindPairs {
 
         //map集合添加时会把相同的给替换掉
         Arrays.sort(nums);
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i=0;i<nums.length - 1 ; i++){
             for (int j = i+1; j<nums.length ; j++){
                 if ((nums[j] - nums[i]) == k ){
@@ -63,7 +63,7 @@ public class FindPairs {
     public static int findPairs2(int[] nums, int k){
         if (k<0) return 0;
         int result = 0;
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         // 利用Map来操作
         for (int i=0;i<nums.length;i++){
             if(map.containsKey(nums[i])){

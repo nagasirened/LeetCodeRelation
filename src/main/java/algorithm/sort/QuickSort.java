@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.sort;
 
 /**
  * <p>
@@ -7,7 +7,7 @@ package algorithm;
  * </p>
  * @author: ZengGuangfu
  * @date 2020/1/16
- * @return: algorithm.QuickSort
+ * @return: algorithm.sort.QuickSort
  */
 public class QuickSort {
 
