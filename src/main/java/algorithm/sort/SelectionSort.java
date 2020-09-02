@@ -15,7 +15,7 @@ public class SelectionSort {
         int[] arg = {72, 6, 57, 88, 60, 42, 83, 73, 48, 85};
         int[] ints = selectionSort(arg);
         for (int anInt : ints) {
-            System.out.print(anInt + "  ");
+             System.out.print(anInt + "  ");
         }
     }
 
@@ -35,9 +35,11 @@ public class SelectionSort {
                     index = j;
                 }
             }
-            int base = nums[i];
-            nums[i] = nums[index];
-            nums[index] = base;
+            if (index != i) {
+                int base = nums[i];
+                nums[i] = nums[index];
+                nums[index] = base;
+            }
         }
         return nums;
     }

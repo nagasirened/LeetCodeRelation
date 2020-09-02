@@ -19,6 +19,16 @@ public class QuickSort {
         }
     }
 
+    // 分治
+    public static int[] sort(int[] nums, int left, int right){
+        if (left < right){
+            int i = quickSort(nums, left, right);
+            sort(nums, left, i-1);
+            sort(nums, i + 1, right);
+        }
+        return nums;
+    }
+
     public static int quickSort(int[] nums, int left, int right){
         int i = left;
         int j = right;
@@ -47,13 +57,4 @@ public class QuickSort {
         return i;
     }
 
-    // 分治
-    public static int[] sort(int[] nums, int left, int right){
-        if (left < right){
-            int i = quickSort(nums, left, right);
-            sort(nums, left, i-1);
-            sort(nums, i + 1, right);
-        }
-        return nums;
-    }
 }
