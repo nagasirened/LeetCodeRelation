@@ -13,7 +13,7 @@ public class SelectionSort {
 
     public static void main(String[] args) {
         int[] arg = {72, 6, 57, 88, 60, 42, 83, 73, 48, 85};
-        int[] ints = selectionSort(arg);
+        int[] ints = selectionSort2(arg);
         for (int anInt : ints) {
              System.out.print(anInt + "  ");
         }
@@ -42,5 +42,31 @@ public class SelectionSort {
             }
         }
         return nums;
+    }
+
+    /**
+     * 重写选择排序
+     */
+    public static int[] selectionSort2(int[] arr) {
+        int length = arr.length;
+        if (length < 2) {
+            return arr;
+        }
+        // 记录最小的数和它的下标
+
+        for (int i = 0; i < length - 1; i++) {
+            int index = i;
+            for (int j = i + 1; j < length; j++) {
+                if (arr[index] > arr[j]){
+                    index = j;
+                }
+            }
+            if (index != i) {
+                int base = arr[i];
+                arr[i] = arr[index];
+                arr[index] = base;
+            }
+        }
+        return arr;
     }
 }
