@@ -17,7 +17,7 @@ public class ShellSort {
     }
 
     /**
-     * 交换法排序  效率低下，因为数据交换耗时
+     * 交换法排序  效率低下，因为数据交换耗时，效率类似冒泡排序，很慢
      * @param arr
      * @return
      */
@@ -45,7 +45,7 @@ public class ShellSort {
     }
 
     /**
-     * 移位法  优化希尔排序
+     * 移位法  优化希尔排序，80000个数据1秒钟左右
      */
     public static int[] shellSort2(int[] arr) {
         int length = arr.length;
