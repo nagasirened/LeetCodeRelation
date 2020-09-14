@@ -24,7 +24,7 @@ public class YangHuiTriangleII {
         List<Integer> result = getRow(5);
         result.forEach( num -> {
             System.out.print(num + "  ");
-        }  );
+        });
     }
 
     /**II的Java提交中击败了72.87% 的用户

@@ -56,7 +56,7 @@ public class HasGroupsSizeX {
     public static boolean hasGroupsSizeX(int[] deck) {
         if(deck.length < 2) return false;
 
-        HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int a: deck) {
             if (map.containsKey(a)){
                 map.put(a, map.get(a) + 1);

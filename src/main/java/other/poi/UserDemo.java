@@ -31,6 +31,7 @@ public class UserDemo {
     @ExcelProperty(value = "生日")
     private Date birth;
 
-    @ExcelIgnore
+    // @ExcelIgnore
+    @ExcelProperty(value = "邮箱")
     private String email;
 }

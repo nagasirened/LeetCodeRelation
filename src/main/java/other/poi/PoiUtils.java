@@ -2,14 +2,10 @@ package other.poi;
 
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.joda.time.DateTime;
-import org.junit.jupiter.api.Test;
 import org.springframework.util.CollectionUtils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,8 +21,8 @@ import java.util.Objects;
 
 public class PoiUtils {
 
-    public static void main(String[] args) throws IOException {
-        poiWrite(list);
+    public static void main(String[] args) throws Exception {
+        read();
     }
 
     public static List<UserDemo> list = new ArrayList<UserDemo>(){
@@ -38,7 +34,7 @@ public class PoiUtils {
         }
     };
 
-    public static String[] titles = {"名字", "年龄", "生日", "邮箱"};
+    public static String[] titles = {"姓名", "年龄", "生日", "邮箱"};
 
     public static final String PATH = "C:\\Users\\Shinelon\\Desktop\\LeetCode Study\\src\\main\\java\\other\\poi\\";
     /**
@@ -105,9 +101,77 @@ public class PoiUtils {
         }
 
         // 标题打印完成之后，开始打印
+        // 总的行数，除去第一行之后还剩 rows - 1行
+        int rows = sheet.getPhysicalNumberOfRows();
+        for (int i = 1; i < rows; i++) {
+            HSSFRow currentRow = sheet.getRow(i);
+            for (int j = 0; j < cellNumbers; j++) {
+                HSSFCell cell = currentRow.getCell(j);
+                CellType cellTypeEnum = cell.getCellTypeEnum();
+                switch (cellTypeEnum) {
+                    case STRING:
+                        System.out.print("字符—" + cell.getStringCellValue() + "  ");
+                        break;
+                    case BOOLEAN:
+                        System.out.print("布尔—" + cell.getBooleanCellValue() + "  ");
+                        break;
+                    case NUMERIC:
+                        if(HSSFDateUtil.isCellDateFormatted(cell)){
+                            System.out.print("日期—" + new DateTime(cell.getDateCellValue()).toString("yyyy-MM-dd HH:mm:ss") + "  ");
+                            break;
+                        }else {
+                            cell.setCellType(CellType.STRING);
+                            System.out.print("数字—" + cell.getStringCellValue() + "  ");
+                            break;
+                        }
+                    case BLANK:
+                        System.out.print("空值-  ");
+                        break;
+                    case ERROR:
+                        System.out.print("错误-  ");
+                        break;
+                    case FORMULA:
+                        String cellFormula = cell.getCellFormula();
+                        System.out.print("公式-" + cellFormula + "  ");
+                        HSSFFormulaEvaluator hssfFormulaEvaluator = new HSSFFormulaEvaluator(workbook);
 
-
+                        CellValue evaluate = hssfFormulaEvaluator.evaluate(cell);
+                        String cellValue = evaluate.formatAsString();
+                        System.out.print(cellValue);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            System.out.println();
+        }
 
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
