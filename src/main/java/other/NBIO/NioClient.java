@@ -1,4 +1,4 @@
-package other.NIO;
+package other.NBIO;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -7,7 +7,7 @@ import java.nio.charset.Charset;
 import java.util.Scanner;
 
 /**
- * other.NIO 客户端
+ * other.NBIO 客户端
  */
 public class NioClient {
 

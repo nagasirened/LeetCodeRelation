@@ -23,7 +23,7 @@ public class QuickSort {
     public static int[] sort(int[] nums, int left, int right){
         if (left < right){
             int i = quickSort(nums, left, right);
-            sort(nums, left, i-1);
+            sort(nums, left, i - 1);
             sort(nums, i + 1, right);
         }
         return nums;

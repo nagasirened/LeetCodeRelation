@@ -1,4 +1,4 @@
-package other.NIO;
+package other.NBIO;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * other.NIO 服务器端
+ * other.NBIO 服务器端
  *
  * 1.创建一个Selector
  * 2.通过ServerSocketChannel创建Channel通道
