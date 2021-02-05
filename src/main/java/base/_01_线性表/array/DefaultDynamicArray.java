@@ -103,6 +103,11 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
         return oldElement;
     }
 
+    /**
+     * 允许为null, 判断时要注意equals 空指针的情况
+     * @param element
+     * @return
+     */
     public int indexOf(E element) {
         if (Objects.isNull(element)) {
             for (int i = 0; i < size; i++) {
