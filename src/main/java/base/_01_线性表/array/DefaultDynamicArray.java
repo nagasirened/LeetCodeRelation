@@ -1,5 +1,7 @@
 package base._01_线性表.array;
 
+import java.util.Objects;
+
 /**
  * author: ZGF
  * context : 动态数组的实现，可设定初始大小，默认最小长度为10
@@ -76,8 +78,6 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Array subscript out of bounds");
         }
-
-        // 考虑扩容
         reDilatation();
 
         for (int i = size - 1; i >= index ; i--) {
@@ -98,34 +98,39 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
         for (int i = index; i < size - 1; i++) {
             elements[i] = elements[i + 1];
         }
-        size --;
+        // 先减，再清空多余的那个引用对象
+        elements[--size] = null;
         return oldElement;
     }
 
     public int indexOf(E element) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i] == element)
-            return i;
+        if (Objects.isNull(element)) {
+            for (int i = 0; i < size; i++) {
+                if (elements[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = 0; i < size; i++) {
+                if (element.equals(elements[i]))
+                    return i;
+            }
         }
         return -1;
     }
 
+    /**
+     * 如果仅仅是 size = 0,
+     * E 如果是引用的对象并没有真正的销毁，对象还是存在不被回收器回收
+     *
+     * 如果使用elements=null, 数组也没有了，下次使用还需要重新创建
+     */
     public void clear() {
-        size = 0;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("[");
+        // 增加一个情况对象的操作，放弃对引用对象的所有引用
         for (int i = 0; i < size; i++) {
-            if (i != 0) {
-                sb.append(",");
-            }
-            sb.append(elements[i]);
+            elements[i] = null;
         }
-        sb.append("]");
-        return sb.toString();
+        size = 0;
     }
 
     /**
@@ -139,7 +144,7 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
     }
 
     /**
-     * 扩容
+     * 满足条件则扩容
      */
     private void reDilatation(){
         int oldCapacity = elements.length;
@@ -155,4 +160,17 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < size; i++) {
+            if (i != 0) {
+                sb.append(",");
+            }
+            sb.append(elements[i]);
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
