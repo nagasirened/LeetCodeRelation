@@ -1,4 +1,6 @@
-package base._01_线性表.array;
+package dataStructure._01_线性表.arraylist;
+
+import dataStructure._01_线性表.AbstractList;
 
 import java.util.Objects;
 
@@ -7,7 +9,7 @@ import java.util.Objects;
  * context : 动态数组的实现，可设定初始大小，默认最小长度为10
  */
 
-public class DefaultDynamicArray<E> implements DynamicArray<E>{
+public class DefaultDynamicArray<E> extends AbstractList<E> {
 
     private int size;
 
@@ -25,29 +27,6 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
 
     public DefaultDynamicArray(){
         this(DEFAULT_CAPACITY);
-    }
-
-    public int size() {
-        return size;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public boolean contains(E element) {
-        return indexOf(element) != -1;
-    }
-
-    /**
-     * 增加元素到尾部
-     */
-    public void add(E element) {
-        /**
-         * elements[size++] = element;
-         * 需要考虑扩容，统一在下面的方法中处理即可
-         */
-        add(size, element);
     }
 
     /**
@@ -69,15 +48,22 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
     }
 
     /**
+     * elements[size++] = element;
+     * 需要考虑扩容，统一在下面的方法中处理即可
+     */
+    @Override
+    public void add(E element) {
+        add(size, element);
+    }
+
+    /**
      * 后面的数往后挪，靠后的先挪，遍历倒序
      * @param index
      * @param element
      */
     public void add(int index, E element) {
         // 判断index的时候，是允许index==size，相当于在尾巴插入
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException("Array subscript out of bounds");
-        }
+        judgeIndexForAdd(index);
         reDilatation();
 
         for (int i = size - 1; i >= index ; i--) {
@@ -139,16 +125,6 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
     }
 
     /**
-     * 判断下标超出执行范围 （改、删、查方法）
-     * @param index
-     */
-    private void judgeIndex(int index){
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Array subscript out of bounds");
-        }
-    }
-
-    /**
      * 满足条件则扩容
      */
     private void reDilatation(){
@@ -177,5 +153,21 @@ public class DefaultDynamicArray<E> implements DynamicArray<E>{
         }
         sb.append("]");
         return sb.toString();
+    }
+
+    /**
+     * 判断下标超出执行范围 （改、删、查方法）
+     * @param index
+     */
+    protected void judgeIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Array subscript out of bounds");
+        }
+    }
+
+    protected void judgeIndexForAdd(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException("Array subscript out of bounds");
+        }
     }
 }

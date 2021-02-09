@@ -9,7 +9,7 @@ package algorithm.array.s;
 
 /**
  * 给定一个长度为 n 的整数数组，你的任务是判断在最多改变 1 个元素的情况下，该数组能否变成一个非递减数列。
-     我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 <= i < n)，满足 algorithm.array[i] <= algorithm.array[i + 1]。
+     我们是这样定义一个非递减数列的： 对于数组中所有的 i (1 <= i < n)，满足 algorithm.arraylist[i] <= algorithm.arraylist[i + 1]。
 
  示例：
  输入: [4,2,3]

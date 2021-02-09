@@ -1,4 +1,4 @@
-package base._01_线性表.array;
+package dataStructure._01_线性表;
 
 /**
  * author: ZGF
@@ -7,7 +7,8 @@ package base._01_线性表.array;
  * 通常创建数组是无法扩容的，我们可以自定义一个动态数组
  */
 
-public interface DynamicArray<E> {
+public interface DynamicGather<E> {
+
 
     int size();
 
@@ -28,4 +29,5 @@ public interface DynamicArray<E> {
     int indexOf(E element);
 
     void clear();
+
 }
