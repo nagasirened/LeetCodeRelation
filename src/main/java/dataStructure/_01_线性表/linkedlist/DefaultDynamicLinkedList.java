@@ -75,13 +75,18 @@ public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
 
     @Override
     public E remove(int index) {
-        judgeIndexForAdd(index);
-        Node<E> prev = getIndexNode(index - 1);
-        E element = prev.next.element;
-
-        prev.next = prev.next.next;
+        judgeIndex(index);
+        Node<E> node = head;
+        if (index == 0) {
+            head = head.next;
+        } else {
+            // index - 1 获取要去除的节点的前一个节点
+            Node<E> prev = getIndexNode(index - 1);
+            node= prev.next;
+            prev.next = node.next;
+        }
         size--;
-        return element;
+        return node.element;
     }
 
     @Override
@@ -164,4 +169,8 @@ public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
         add(size, element);
     }
 
+    public static void main(String[] args) {
+        // 删除链表中的某个节点
+
+    }
 }
