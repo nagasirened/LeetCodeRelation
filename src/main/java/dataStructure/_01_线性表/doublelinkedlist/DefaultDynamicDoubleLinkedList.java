@@ -1,4 +1,4 @@
-package dataStructure._01_线性表.linkedlist;
+package dataStructure._01_线性表.doublelinkedlist;
 
 import dataStructure._01_线性表.AbstractList;
 
@@ -7,36 +7,40 @@ import dataStructure._01_线性表.AbstractList;
  * context : 自定义一个单向链表
  */
 
-public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
+public class DefaultDynamicDoubleLinkedList<E> extends AbstractList<E> {
 
     private int size;
 
-    private Node<E> head;
+    private Node<E> first;
+
+    private Node<E> last;
 
     /** 静态内部类 */
     private static class Node<E> {
         /* 存储的数据 */
         E element;
 
+        /* 指向上一个节点 */
+        Node<E> prev;
+
         /* 指向下一个节点 */
         Node<E> next;
 
-        public Node(E element, Node<E> next) {
+        public Node(E element, Node<E> prev, Node<E> next) {
             this.element = element;
-            this.next    = next;
+            this.prev = prev;
+            this.next = next;
         }
     }
 
     /**
-     * 例子：要分析下标为1，就循环一次，获取element
-     * @param index
-     * @return
+     *
      */
     @Override
     public E get(int index) {
         judgeIndex(index);
-        Node<E> node = getIndexNode(index);
-        return node.element;
+        Node<E> indexNode = getIndexNode(index);
+        return indexNode.element;
     }
 
     /**
@@ -48,11 +52,10 @@ public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
     @Override
     public E set(int index, E element) {
         judgeIndex(index);
-        Node<E> node = getIndexNode(index);
-        // 返回原来的值
-        E result = node.element;
-        node.element = element;
-        return result;
+        Node<E> indexNode = getIndexNode(index);
+        E oldElement = indexNode.element;
+        indexNode.element = element;
+        return oldElement;
     }
 
     /**
@@ -60,79 +63,66 @@ public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(int index, E element) {
-        if (index == 0) {
-            head = new Node<>(element, head);
-            size++;
-            return;
-        }
-        judgeIndexForAdd(index);
-        // 需要获取
-        Node<E> base = getIndexNode(index - 1);
-        // 包装后面的新节点
-        base.next = new Node<>(element, base.next);
-        size++;
     }
 
     @Override
     public E remove(int index) {
-        judgeIndex(index);
-        Node<E> node = head;
-        if (index == 0) {
-            head = head.next;
-        } else {
-            // index - 1 获取要去除的节点的前一个节点
-            Node<E> prev = getIndexNode(index - 1);
-            node= prev.next;
-            prev.next = node.next;
-        }
-        size--;
-        return node.element;
+        return null;
     }
 
     @Override
     public int indexOf(E element) {
-        Node<E> node = this.head;
+        Node<E> temp = first;
         if (element == null) {
             for (int i = 0; i < size; i++) {
-                if (node.element == null) {
+                if (temp.element == null) {
                     return i;
                 }
-                node = node.next;
+                temp = temp.next;
             }
         } else {
             for (int i = 0; i < size; i++) {
-                if (element.equals(node.element)) {
+                if (temp.element.equals(element)) {
                     return i;
                 }
-                node = node.next;
+                temp = temp.next;
             }
         }
         return -1;
     }
 
-    @Override public void clear() {
-        head.next = null;
-        size = 0;
+    @Override
+    public void clear() {
+        size  = 0;
+        first = null;
+        last  = null;
     }
 
     /**
-     * 例子：获取下标为2的，需要从head 出发，next两次
-     * @param index
-     * @return
+     * 如果索引位于小于索引的一半，从first遍历  反之反着遍历
      */
     private Node<E> getIndexNode(int index) {
-        Node<E> base = head;
-        for (int i = 0; i < index; i++) {
-            base = base.next;
+        if (index > (size >> 1)) {
+            Node node = first;
+            for (int i = 0; i < index; i++) {
+                node = node.next;
+            }
+            return node;
+        } else {
+            Node node = last;
+            // 1-2-3-4-5  取2的话，从4开始前移两次
+            for (int i = size - 1; i > index ; i++) {
+                node = node.prev;
+            }
+            return node;
         }
-        return base;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        Node<E> node = this.head;
+        Node<E> node = first;
         for (int i = 0; i < size; i++) {
             if (i != 0) {
                 sb.append(",");
@@ -166,11 +156,6 @@ public class DefaultDynamicLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(E element) {
-        add(size, element);
-    }
-
-    public static void main(String[] args) {
-        // 删除链表中的某个节点
-
+        this.add(size, element);
     }
 }
