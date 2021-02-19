@@ -1,4 +1,4 @@
-package algorithm.array.s;
+package renewal;
 
 /**
  * author: ZGF
@@ -7,7 +7,7 @@ package algorithm.array.s;
  *      0 1 1 2 3 5 8 13...  (下标是从0开始)
  */
 
-public class FibonacciNumber {
+public class _509_斐波那契数 {
 
 
     public static void main(String[] args) {
