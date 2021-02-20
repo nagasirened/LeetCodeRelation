@@ -63,11 +63,50 @@ public class DefaultDynamicDoubleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(int index, E element) {
+        judgeIndexForAdd(index);
+        // 如果index=size，如果原始没有数据，可能会造成oldlast == null的情况
+        if (index == size) {
+            Node<E> oldLast = this.last;
+            last = new Node<>(element, oldLast, null);
+            if (oldLast == null) {
+                first = last;
+            } else {
+                oldLast.next = last;
+            }
+        } else {
+            Node<E> next = getIndexNode(index);
+            Node<E> prev = next.prev;
+            Node<E> eNode = new Node<>(element, prev, next);
+            next.prev = eNode;
+            // 如果index=0， prev==null
+            if (prev == null) {
+                first = eNode;
+            } else {
+                prev.next = eNode;
+            }
+        }
+        size++;
     }
 
     @Override
     public E remove(int index) {
-        return null;
+        judgeIndex(index);
+        Node<E> eNode = getIndexNode(index);
+        Node<E> prev = eNode.prev;
+        Node<E> next = eNode.next;
+        if (prev == null) {     // index==0
+            first = next;
+        } else {
+            prev.next = next;
+        }
+
+        if (next == null) {     // index == (size - 1)
+            last = prev;
+        } else {
+            next.prev = prev;
+        }
+        size--;
+        return eNode.element;
     }
 
     @Override
