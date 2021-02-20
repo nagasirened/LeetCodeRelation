@@ -141,7 +141,7 @@ public class DefaultDynamicDoubleLinkedList<E> extends AbstractList<E> {
      * 如果索引位于小于索引的一半，从first遍历  反之反着遍历
      */
     private Node<E> getIndexNode(int index) {
-        if (index > (size >> 1)) {
+        if (index < (size >> 1)) {
             Node node = first;
             for (int i = 0; i < index; i++) {
                 node = node.next;
@@ -197,4 +197,5 @@ public class DefaultDynamicDoubleLinkedList<E> extends AbstractList<E> {
     public void add(E element) {
         this.add(size, element);
     }
+
 }
