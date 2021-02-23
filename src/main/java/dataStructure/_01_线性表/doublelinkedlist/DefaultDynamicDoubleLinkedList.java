@@ -132,9 +132,16 @@ public class DefaultDynamicDoubleLinkedList<E> extends AbstractList<E> {
 
     @Override
     public void clear() {
+        // 前端这段非必要，但是可以防止有迭代器的指针引用导致内存不被回收
+        Node temp;
+        for (Node<E> item = first; item != null; item = temp) {
+            temp = item.next;
+            item.prev = null;
+            item.element = null;
+            item.next = null;
+        }
         size  = 0;
-        first = null;
-        last  = null;
+        first = last = null;
     }
 
     /**
