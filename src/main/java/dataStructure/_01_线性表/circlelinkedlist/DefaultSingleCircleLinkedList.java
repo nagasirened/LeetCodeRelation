@@ -1,17 +1,17 @@
-package dataStructure._01_线性表.singlelinkedlist;
+package dataStructure._01_线性表.circlelinkedlist;
 
 import dataStructure._01_线性表.AbstractList;
 
 /**
  * author: ZGF
- * context : 自定义一个单向链表
+ * context : 单向循环链表
  */
 
-public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
+public class DefaultSingleCircleLinkedList<E> extends AbstractList<E> {
 
     private int size;
 
-    private Node<E> head;
+    private Node<E> first;
 
     /** 静态内部类 */
     private static class Node<E> {
@@ -23,14 +23,12 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
 
         public Node(E element, Node<E> next) {
             this.element = element;
-            this.next    = next;
+            this.next = next;
         }
     }
 
     /**
-     * 例子：要分析下标为1，就循环一次，获取element
-     * @param index
-     * @return
+     *
      */
     @Override
     public E get(int index) {
@@ -56,17 +54,17 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
     }
 
     /**
-     * 在index位置插入数据，要找到index前面那个数，也就是需要next (index - 1)次
+     * index = 0 的时候，需要将最后一个Node的指针指向当前Node
      */
     @Override
     public void add(int index, E element) {
         judgeIndexForAdd(index);
         if (index == 0) {
-            head = new Node<>(element, head);
+            first = new Node<>(element, first);
+            Node<E> indexNode = size == 0 ? first : getIndexNode(size);
+            indexNode.next = first;
         } else {
-            // 需要获取
             Node<E> prev = getIndexNode(index - 1);
-            // 包装后面的新节点
             prev.next = new Node<>(element, prev.next);
         }
         size++;
@@ -75,13 +73,18 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
     @Override
     public E remove(int index) {
         judgeIndex(index);
-        Node<E> node = head;
+        Node<E> node = first;
         if (index == 0) {
-            head = head.next;
+            if (size == 1) {
+                first = null;
+            } else {
+                Node<E> last = getIndexNode(size - 1);
+                first = first.next;
+                last.next = first;
+            }
         } else {
-            // index - 1 获取要去除的节点的前一个节点
             Node<E> prev = getIndexNode(index - 1);
-            node= prev.next;
+            node = prev.next;
             prev.next = node.next;
         }
         size--;
@@ -90,20 +93,20 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
 
     @Override
     public int indexOf(E element) {
-        Node<E> node = this.head;
+        Node temp = first;
         if (element == null) {
             for (int i = 0; i < size; i++) {
-                if (node.element == null) {
+                if (temp.element == null) {
                     return i;
                 }
-                node = node.next;
+                temp = temp.next;
             }
         } else {
             for (int i = 0; i < size; i++) {
-                if (element.equals(node.element)) {
+                if (element.equals(temp.element)) {
                     return i;
                 }
-                node = node.next;
+                temp = temp.next;
             }
         }
         return -1;
@@ -111,17 +114,15 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
 
     @Override
     public void clear() {
-        head.next = null;
+        first = first.next = null;
         size = 0;
     }
 
     /**
-     * 例子：获取下标为2的，需要从head 出发，next两次
-     * @param index
-     * @return
+     * 如果索引位于小于索引的一半，从first遍历  反之反着遍历
      */
     private Node<E> getIndexNode(int index) {
-        Node<E> base = head;
+        Node<E> base = first;
         for (int i = 0; i < index; i++) {
             base = base.next;
         }
@@ -132,12 +133,12 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        Node<E> node = this.head;
+        Node<E> node = first;
         for (int i = 0; i < size; i++) {
             if (i != 0) {
                 sb.append(",");
             }
-            sb.append(node.element);
+            sb.append(node.element + "_" +node.next.element);
             node = node.next;
         }
         sb.append("]");
@@ -166,11 +167,17 @@ public class DefaultDynamicSingleLinkedList<E> extends AbstractList<E> {
      */
     @Override
     public void add(E element) {
-        add(size, element);
+        this.add(size, element);
     }
 
     public static void main(String[] args) {
-        // 删除链表中的某个节点
-
+        DefaultSingleCircleLinkedList<Integer> list = new DefaultSingleCircleLinkedList<>();
+        list.add(111);
+        list.add(222);
+        list.add(333);
+        list.clear();
+        list.add(444);
+        list.add(555);
+        System.out.println(list.toString());
     }
 }
