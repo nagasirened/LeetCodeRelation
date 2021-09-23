@@ -1,6 +1,6 @@
 package algorithm;
 
-import org.elasticsearch.common.StopWatch;
+import org.apache.commons.lang3.time.StopWatch;
 
 import java.util.BitSet;
 
@@ -82,7 +82,7 @@ public class MyBitmap {
         System.out.println(bitSet.get(7800));
 
         sw.stop();
-        System.out.println(sw.prettyPrint());
+        System.out.println(sw.getNanoTime());
         // 128size  1.4ms
         // 30000000size  3ms
     }
