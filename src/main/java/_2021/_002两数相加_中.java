@@ -1,6 +1,6 @@
 package _2021;
 
-public class _002M两数相加 {
+public class _002两数相加_中 {
 
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
