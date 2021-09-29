@@ -1,6 +1,6 @@
 package _2021;
 
-public class Mark_053最大子序和 {
+public class _053最大子序和_Mark {
 
     public static void main(String[] args) {
         int[] nums = {6,7,-1,8};
