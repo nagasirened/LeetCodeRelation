@@ -1,4 +1,4 @@
-package renewal;
+package leetcode;
 
 /**
  * 如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。

@@ -1,4 +1,4 @@
-package renewal;
+package leetcode;
 
 /**
    输入: 5->4->3->2->1->NULL

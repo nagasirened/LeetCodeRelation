@@ -1,4 +1,4 @@
-package renewal;
+package leetcode;
 
 /**
  * 链表至少包含两个节点。
@@ -20,7 +20,7 @@ public class _237_删除链表中的节点 {
      * 将自己完全变成下一个节点，自己就消失了
      * @param node
      */
-    public void deleteNode(ListNode node){
+    public void deleteNode(ListNodeQQ node){
         node.val = node.next.val;
         node.next = node.next.next;
     }
@@ -28,8 +28,8 @@ public class _237_删除链表中的节点 {
 }
 
 
-class ListNode {
+class ListNodeQQ {
   int val;
   ListNode next;
-  ListNode(int x) { val = x; }
+    ListNodeQQ(int x) { val = x; }
 }

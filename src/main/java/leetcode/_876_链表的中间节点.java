@@ -1,4 +1,4 @@
-package renewal;
+package leetcode;
 
 /**
  给定一个头结点为 head 的非空单链表，返回链表的中间结点。
