@@ -1,4 +1,4 @@
-package _2021;
+package leetcode;
 
 public class _035搜索插入位置 {
 

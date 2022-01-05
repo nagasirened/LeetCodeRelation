@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5ca2045-b59b-4661-9abb-95936dc77c17" name="Default" comment="069二分Sqrt">
-      <change afterPath="$PROJECT_DIR$/src/main/java/_2021/_006Z字形变换.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_005最长回文子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/_2021/_005最长回文子串_中.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_001两数之和.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_001两数之和.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_002两数相加_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_002两数相加_中.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_003无重复字符的最长子串_中.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_005最长回文子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_005最长回文子串_中.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_006Z字形变换.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_006Z字形变换.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_007整数反转.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_007整数反转.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_009回文数.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_009回文数.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_013罗马数字转整数.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_013罗马数字转整数.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_014最长公共前缀.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_014最长公共前缀.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_020有效的括号.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_020有效的括号.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_021合并两个有序链表.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_021合并两个有序链表.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_026删除有序数组中的重复项.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_026删除有序数组中的重复项.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_027移除元素.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_027移除元素.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_035搜索插入位置.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_035搜索插入位置.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_053最大子序和_Mark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_053最大子序和_Mark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_058最后一个单词的长度.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_058最后一个单词的长度.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_066加一.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_066加一.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_067二进制求和.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_067二进制求和.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_069Sqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/_069Sqrt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +311,7 @@
       <recent name="C:\Users\Shinelon\Desktop\LeetCodeRelation\src\main\java\array" />
     </key>
   </component>
-  <component name="RunManager" selected="Application._006Z字形变换">
+  <component name="RunManager" selected="Application._058最后一个单词的长度">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -304,27 +319,13 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="_006Z字形变换" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._006Z字形变换" />
-      <module name="leetcode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="_2021.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="_058最后一个单词的长度" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._058最后一个单词的长度" />
+      <option name="MAIN_CLASS_NAME" value="leetcode._058最后一个单词的长度" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_2021.*" />
+          <option name="PATTERN" value="_2022.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -333,12 +334,12 @@
       </method>
     </configuration>
     <configuration name="_066加一" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._066加一" />
+      <option name="MAIN_CLASS_NAME" value="leetcode._066加一" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_2021.*" />
+          <option name="PATTERN" value="_2022.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -347,12 +348,12 @@
       </method>
     </configuration>
     <configuration name="_067二进制求和" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._067二进制求和" />
+      <option name="MAIN_CLASS_NAME" value="leetcode._067二进制求和" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_2021.*" />
+          <option name="PATTERN" value="_2022.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -361,12 +362,12 @@
       </method>
     </configuration>
     <configuration name="_069Sqrt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._069Sqrt" />
+      <option name="MAIN_CLASS_NAME" value="leetcode._069Sqrt" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_2021.*" />
+          <option name="PATTERN" value="_2022.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -416,9 +417,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application._058最后一个单词的长度" />
+      <item itemvalue="Application._066加一" />
+      <item itemvalue="Application._067二进制求和" />
+      <item itemvalue="Application._069Sqrt" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application._006Z字形变换" />
         <item itemvalue="Application._069Sqrt" />
         <item itemvalue="Application._067二进制求和" />
         <item itemvalue="Application._066加一" />
@@ -456,7 +462,7 @@
       <workItem from="1565312236656" duration="16467000" />
       <workItem from="1565573685220" duration="5570000" />
       <workItem from="1565591239936" duration="1070000" />
-      <workItem from="1641346333579" duration="3277000" />
+      <workItem from="1641346333579" duration="3338000" />
     </task>
     <task id="LOCAL-00001" summary="001、007题提交">
       <created>1632388727753</created>
@@ -556,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632973000242</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Z字形变换">
+      <created>1641349849030</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641349849030</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -678,7 +691,8 @@
     <MESSAGE value="067提交" />
     <MESSAGE value="wu" />
     <MESSAGE value="069二分Sqrt" />
-    <option name="LAST_COMMIT_MESSAGE" value="069二分Sqrt" />
+    <MESSAGE value="Z字形变换" />
+    <option name="LAST_COMMIT_MESSAGE" value="Z字形变换" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -689,7 +703,7 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/_2021/_058最后一个单词的长度.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/_058最后一个单词的长度.java</url>
           <line>10</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>

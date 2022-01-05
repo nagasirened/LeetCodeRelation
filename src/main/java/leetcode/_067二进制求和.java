@@ -1,4 +1,4 @@
-package _2021;
+package leetcode;
 
 public class _067二进制求和 {
     public static void main(String[] args) {

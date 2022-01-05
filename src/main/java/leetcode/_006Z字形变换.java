@@ -1,6 +1,4 @@
-package _2021;
-
-import com.alibaba.fastjson.JSON;
+package leetcode;
 
 public class _006Z字形变换 {
 

@@ -1,4 +1,4 @@
-package _2021;
+package leetcode;
 
 public class _026删除有序数组中的重复项 {
 
