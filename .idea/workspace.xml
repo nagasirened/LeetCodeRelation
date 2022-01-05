@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5ca2045-b59b-4661-9abb-95936dc77c17" name="Default" comment="058\066提交">
-      <change afterPath="$PROJECT_DIR$/src/main/java/_2021/_067二进制求和.java" afterDir="false" />
+    <list default="true" id="d5ca2045-b59b-4661-9abb-95936dc77c17" name="Default" comment="069二分Sqrt">
+      <change afterPath="$PROJECT_DIR$/src/main/java/_2021/_006Z字形变换.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/_2021/_005最长回文子串_中.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/_2021/_005最长回文子串_中.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="$MAVEN_REPOSITORY$" />
-        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="userSettingsFile" value="$PROJECT_DIR$/../../baseConfig/apache-maven-3.6.3/conf/settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -275,11 +276,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path" value="D:/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -292,7 +296,7 @@
       <recent name="C:\Users\Shinelon\Desktop\LeetCodeRelation\src\main\java\array" />
     </key>
   </component>
-  <component name="RunManager" selected="Application._067二进制求和">
+  <component name="RunManager" selected="Application._006Z字形变换">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -300,8 +304,8 @@
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
     </configuration>
-    <configuration name="_005最长回文子串_中" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_2021._005最长回文子串_中" />
+    <configuration name="_006Z字形变换" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_2021._006Z字形变换" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -356,8 +360,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="_069Sqrt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_2021._069Sqrt" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -389,10 +418,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application._006Z字形变换" />
+        <item itemvalue="Application._069Sqrt" />
         <item itemvalue="Application._067二进制求和" />
         <item itemvalue="Application._066加一" />
         <item itemvalue="Application._058最后一个单词的长度" />
-        <item itemvalue="Application._005最长回文子串_中" />
       </list>
     </recent_temporary>
   </component>
@@ -426,6 +456,7 @@
       <workItem from="1565312236656" duration="16467000" />
       <workItem from="1565573685220" duration="5570000" />
       <workItem from="1565591239936" duration="1070000" />
+      <workItem from="1641346333579" duration="3277000" />
     </task>
     <task id="LOCAL-00001" summary="001、007题提交">
       <created>1632388727753</created>
@@ -504,7 +535,28 @@
       <option name="project" value="LOCAL" />
       <updated>1632910049991</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="067提交">
+      <created>1632916968289</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632916968289</updated>
+    </task>
+    <task id="LOCAL-00013" summary="wu">
+      <created>1632917060403</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632917060403</updated>
+    </task>
+    <task id="LOCAL-00014" summary="069二分Sqrt">
+      <created>1632973000242</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1632973000242</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -597,7 +649,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -623,7 +675,10 @@
     <MESSAGE value="003提交" />
     <MESSAGE value="005提交" />
     <MESSAGE value="058\066提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="058\066提交" />
+    <MESSAGE value="067提交" />
+    <MESSAGE value="wu" />
+    <MESSAGE value="069二分Sqrt" />
+    <option name="LAST_COMMIT_MESSAGE" value="069二分Sqrt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -632,11 +687,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/array/s/FindUnsortedSubarray.java</url>
           <line>66</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/_2021/_003无重复字符的最长子串_中.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/_2021/_058最后一个单词的长度.java</url>
